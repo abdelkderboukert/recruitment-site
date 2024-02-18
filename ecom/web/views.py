@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import user
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -7,5 +9,8 @@ def home(request):
     hmhm = 'gdgfngh'
     return render(request, 'home.html', { 'users' : users , 'hmhm' : hmhm})
 
-def login(request):
+def login_user(request):
+    return render(request, 'login.html', {})
+
+def logout_user(request):
     return render(request, 'login.html', {})

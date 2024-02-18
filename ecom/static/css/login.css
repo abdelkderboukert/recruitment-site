@@ -11210,15 +11210,50 @@ body {
 }
 
 #container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#text{
+  width: 50%;
+  height: 100%;
+}
+
+#regis{
+  width: 50%;
+  height: 100%;
+}
+
+.login_regist{
+  width: 100%;
+  height: 100%;
   
 }
 
-#text{}
+#log{
+  display: none;
+}
 
-#regis{}
+#reg{
+  display: block;
+}
 
-.login_regist{}
-
-#log{}
-
-#reg{}
+@media ((max-width:1023px)) {
+  #container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  #text{
+    width: 50%;
+    height: 100%;
+  }
+  
+  #regis{
+    width: 100%;
+    height: 100%;
+  }
+}
