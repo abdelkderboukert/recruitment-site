@@ -34,6 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#login">login</a></li>
                     <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">registre</a></li>
                 </ul>
             </div>
         </div>
@@ -45,7 +46,7 @@
                     <h1 class="mx-auto my-0 text-uppercase">ALG ON</h1>
                     <h2 class="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by
                         Start Bootstrap.</h2>
-                    <a class="btn btn-primary" href="#login">Get Started</a>
+                    <a class="btn btn-primary" href="{% url 'register' %}">Get Started</a>
                 </div>
             </div>
         </div>
@@ -54,7 +55,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-lg-8">
-                    <h2 class="text-white mb-4">ALG ON </h2>
+                    <h2 class="text-white mb-4" style="font-weight: bold;">ALG <span class="highlight">ON</span> </h2>
                     <p class="text-white-50">
                         The site will offer a user-friendly interface where candidates will be able to download
                         their cvs, thus facilitating their visibility for recruiters. On the business side,
@@ -69,11 +70,24 @@
     <section class="log-section" id="login">
         <div class="#" id="container">
             <div class="div-login_regist" id="text">
-                <h1>ryjrhfg fnf fnsfn fnfsn</h1>
+                <h5 id="tit" style="font-weight: bold;">JOIN FOR FREE</h5>
+                <h1 style="font-weight: bold;">We offer the opportunity to <span class="highlight">DEVELOP
+                        YOURSELF</span>, You are in safe hands
+                </h1>
+                <br>
+                <br>
+                <p>We are honored to sponsor you</p>
             </div>
             <div class="div-login_regist" id="regis">
                 <div class="login_regist" id="log">
-                    <h1>fdhn,sfhn</h1>
+                    <h1 style="font-weight: bold;">Welcome</h1>
+                    <h1 style="font-weight: bold;">Back to our website<span class="highlight">.</span></h1>
+                    <form action="{%url 'login' %}" method="post">
+                        {% csrf_token %}
+                        <input type="text" name="email" id="btn-email" class="input-login">
+                        <input type="password" name="password" id="btn-password" class="input-login">
+                        <button type="submit" id="brnn">login</button>
+                    </form>
                 </div>
                 <div class="login_regist" id="reg">
                     <h1>dgbqdfbqdb</h1>

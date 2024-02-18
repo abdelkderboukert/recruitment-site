@@ -56,3 +56,11 @@ if (navigator.userAgent.indexOf("Chrome") > -1 || navigator.userAgent.indexOf("S
     style.innerHTML = 'body { -ms-overflow-style: none; }';
     document.getElementsByTagName('head')[0].appendChild(style);
   }
+
+  document.getElementById('btn-email').addEventListener('input', function() {
+    this.style.borderColor = '#64a19d';
+  });
+
+  document.getElementById('btn-password').addEventListener('input', function() {
+    this.style.borderColor = '#64a19d';
+  });
