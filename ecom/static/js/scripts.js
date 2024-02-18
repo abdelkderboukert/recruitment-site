@@ -1,11 +1,4 @@
-/*!
-* Start Bootstrap - Grayscale v7.0.6 (https://startbootstrap.com/theme/grayscale)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
+
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -52,3 +45,14 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+if (navigator.userAgent.indexOf("Chrome") > -1 || navigator.userAgent.indexOf("Safari") > -1) {
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = 'body::-webkit-scrollbar { display: none; }';
+    document.getElementsByTagName('head')[0].appendChild(style);
+  } else if (navigator.userAgent.indexOf("MSIE") > -1 || navigator.userAgent.indexOf("Trident") > -1) {
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = 'body { -ms-overflow-style: none; }';
+    document.getElementsByTagName('head')[0].appendChild(style);
+  }
