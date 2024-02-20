@@ -11245,16 +11245,34 @@ form{
   height: 100%;
   
 }
-.input-login{
+.input-login {
   width: 80%;
   height: 50px;
   border-radius: 15px;
   border: none;
   background-color: #2C2B2B;
-  margin: 20px;
   color: #ffff;
+  margin: 20px;
+  padding: 30px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
+.input-login::placeholder {
+  color: #64a19d;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.input-login:focus::placeholder,
+.input-login:hover::placeholder {
+  transform: translateY(-130%) translateX(-20%);
+  opacity: 1;
+}
 .input-login:hover{
   border: 2px solid #64a19d;
 }
@@ -11264,7 +11282,7 @@ form{
   width: 80%;
   border-radius: 15px;
   background-color: #64a19d;
-  margin: 20px;
+  margin: 0 20px 20px 20px;
   border: none;
 }
 

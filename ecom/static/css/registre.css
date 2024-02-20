@@ -11021,22 +11021,22 @@ body {
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);/**/
   }
   #mainNav .nav-link:hover {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75);/**/
   }
   #mainNav .nav-link:active {
     color: #fff;
   }
   #mainNav.navbar-shrink {
-    background-color: #fff;
+    background-color: transparent;
   }
   #mainNav.navbar-shrink .navbar-brand {
-    color: #000;
+    color: rgba(255, 255, 255, 0.5);
   }
   #mainNav.navbar-shrink .nav-link {
-    color: #000;
+    color: rgba(255, 255, 255, 0.5);
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
@@ -11063,62 +11063,6 @@ body {
   border: 0;
 }
 
-.masthead {
-  position: relative;
-  width: 100%;
-  height: auto;
-  min-height: 35rem;
-  padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/bg-masthead.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
-}
-.masthead h1, .masthead .h1 {
-  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  letter-spacing: 0.8rem;
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-          background-clip: text;
-}
-.masthead h2, .masthead .h2 {
-  max-width: 20rem;
-  font-size: 1rem;
-}
-@media (min-width: 768px) {
-  .masthead h1, .masthead .h1 {
-    font-size: 4rem;
-    line-height: 4rem;
-  }
-}
-@media (min-width: 992px) {
-  .masthead {
-    height: 100vh;
-    padding: 0;
-  }
-  .masthead h1, .masthead .h1 {
-    font-size: 6.5rem;
-    line-height: 6.5rem;
-    letter-spacing: 0.8rem;
-  }
-  .masthead h2, .masthead .h2 {
-    max-width: 30rem;
-    font-size: 1.25rem;
-  }
-}
-
-.about-section {
-  padding-top: 10rem;
-  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
-}
-.about-section p {
-  margin-bottom: 5rem;
-}
-
 .projects-section {
   padding: 10rem 0;
 }
@@ -11141,74 +11085,18 @@ body {
   }
 }
 
-.signup-section {
-  padding: 10rem 0;
+.footer {
+  padding: 5rem 0;
+}
+
+.log-section{
+  height: 100vh;
+  width: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 75%, #000 100%), url("../assets/img/bg-signup.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-}
-.signup-section .form-signup input {
-  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  padding: 1.25rem 2rem;
-  height: auto;
-  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 80%;
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
-  border: 0;
-}
-
-.contact-section {
-  padding-top: 5rem;
-}
-.contact-section .card {
-  border: 0;
-  border-bottom: 0.25rem solid #64a19d;
-}
-.contact-section .card h4, .contact-section .card .h4 {
-  font-size: 0.8rem;
-  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
-}
-.contact-section .card hr {
-  opacity: 1;
-  border-color: #64a19d;
-  border-width: 0.25rem;
-  width: 3rem;
-}
-.contact-section .social {
-  margin-top: 5rem;
-}
-.contact-section .social a {
-  text-align: center;
-  height: 3rem;
-  width: 3rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 100%;
-  line-height: 3rem;
-  color: rgba(255, 255, 255, 0.3);
-}
-.contact-section .social a:hover {
-  color: rgba(255, 255, 255, 0.5);
-}
-.contact-section .social a:active {
-  color: #fff;
-}
-
-.footer {
-  padding: 5rem 0;
-}
-
-#logo{
-  color: #64a19d;
-}
-.log-section{
-  height: auto;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 #container{
@@ -11223,6 +11111,7 @@ body {
   height: 100%;
   color: #ffff;
   padding: 70px;
+  margin-top: 70px;
 }
 
 #tit{
@@ -11247,46 +11136,52 @@ form{
   height: 100%;
   
 }
-.input-login {
+.put-to {
   width: 80%;
   height: 50px;
   border-radius: 15px;
   border: none;
   background-color: #2C2B2B;
+  color: #ffff;
   margin: 20px;
   padding: 30px;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.input-login::placeholder {
-  color: #64a19d !important;
+.put-on::placeholder, .put-to::placeholder {
+  color: #64a19d;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: all 0.3s ease;
 }
 
-.input-login:hover{
+.put-on:focus::placeholder, .put-to:focus::placeholder,
+.put-on:hover::placeholder, .put-to:hover::placeholder {
+  transform: translateY(-130%) translateX(-20%);
+  opacity: 1;
+}
+.put-on:hover, .put-to:hover{
   border: 2px solid #64a19d;
-}
-
-label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 16px;
 }
 
 #brnn{
   height: 50px;
-  width: 80%;
+  width: 90%;
   border-radius: 15px;
   background-color: #64a19d;
-  margin: 20px;
+  margin: 0 20px 20px 20px;
   border: none;
+  justify-self: center;
 }
 
 #log{
   display: block;
   color: #ffff;
-}
-
-#reg{
-  display: none;
+  margin-top: 70px;
 }
 
 @media ((max-width:1023px)) {
@@ -11315,5 +11210,24 @@ label {
 }
 
 .highlight {
-  color: #64a19d !important;
+  color: #64a19d;
+}
+.put-con{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.put-on{
+  width: 100%;
+  height: 50px;
+  border-radius: 15px;
+  border: none;
+  background-color: #2C2B2B;
+  color: #ffff;
+  margin: 20px;
+  padding: 30px 15px 30px 15px;
+  position: relative;
+  transition: all 0.3s ease;
 }

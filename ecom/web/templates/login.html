@@ -84,13 +84,17 @@
                     <h1 style="font-weight: bold;">Back to our website<span class="highlight">.</span></h1>
                     <form action="{%url 'login' %}" method="post">
                         {% csrf_token %}
-                        <input type="text" name="email" id="btn-email" class="input-login">
-                        <input type="password" name="password" id="btn-password" class="input-login">
-                        <button type="submit" id="brnn">login</button>
+                        <!--<label for="email">Email:</label>-->
+                        <input type="text" name="email" id="btn-email" class="input-login" placeholder="email">
+                        <!--<label for="email">Password:</label>-->
+                        <input type="password" name="password" id="btn-password" class="input-login"
+                            placeholder="password">
+                        <p style="margin-left: 20px;">you don't have a accont <a href="{% url 'register' %}">clicke
+                                here</a>.</p>
+                        <button type="submit" id="brnn">
+                            <h3 style="font-weight: bold;">login</h3>
+                        </button>
                     </form>
-                </div>
-                <div class="login_regist" id="reg">
-                    <h1>dgbqdfbqdb</h1>
                 </div>
             </div>
         </div>

@@ -1,14 +1,89 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet" />
+    <title>add user</title>
+    <link rel="stylesheet" href="{% static 'css/registre.css' %}">
 </head>
 
 <body>
-
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="{% url 'login'%}#page-top">ALGERIA ON</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login'%}#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}#login">login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}#signup">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">registre</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="log-section" id="login">
+        <div class="#" id="container">
+            <div class="div-login_regist" id="text">
+                <h5 id="tit" style="font-weight: bold;">JOIN FOR FREE</h5>
+                <h1 style="font-weight: bold;">We offer the opportunity to <span class="highlight">DEVELOP
+                        YOURSELF</span>, You are in safe hands
+                </h1>
+                <br>
+                <br>
+                <p>We are honored to sponsor you</p>
+            </div>
+            <div class="div-login_regist" id="regis">
+                <div class="login_regist" id="log">
+                    <h1 style="font-weight: bold;">Create</h1>
+                    <h1 style="font-weight: bold;">New account<span class="highlight">.</span></h1>
+                    <form action="{%url 'login' %}" method="post">
+                        {% csrf_token %}
+                        <div class="put-con">
+                            <input type="text" name="" class="put-to" placeholder="name">
+                            <input type="text" name="" class="put-to" placeholder="prename">
+                        </div>
+                        <div class="put-con">
+                            <input type="email" name="" class="put-on" placeholder="email">
+                        </div>
+                        <div class="put-con">
+                            <input type="text" name="" class="put-to" placeholder="N°phon">
+                            <input type="text" name="" class="put-to" placeholder="address">
+                        </div>
+                        <p style="margin-left: 20px;">you alrady have a accont <a
+                                href="{% url 'login' %}#login">login</a>.</p>
+                        <button type="submit" id="brnn">
+                            <h3 style="font-weight: bold;">Sing up</h3>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer bg-black small text-center text-white-50">
+        <div class="container px-4 px-lg-5">Copyright &copy; algeriaON.dz 2023</div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="{% static 'js/register.js' %}"></script>
 </body>
 
 </html>
