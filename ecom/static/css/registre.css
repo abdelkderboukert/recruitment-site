@@ -11143,7 +11143,7 @@ form{
   border: none;
   background-color: #2C2B2B;
   color: #ffff;
-  margin: 20px;
+  margin: 15px;
   padding: 30px;
   position: relative;
   transition: all 0.3s ease;
@@ -11176,6 +11176,7 @@ form{
   margin: 0 20px 20px 20px;
   border: none;
   justify-self: center;
+  color: rgba(255, 255, 255, 0.9)!important
 }
 
 #log{
@@ -11227,7 +11228,7 @@ form{
   background-color: #2C2B2B;
   color: #ffff;
   margin: 20px;
-  padding: 30px 15px 30px 15px;
+  padding: 15px;
   position: relative;
   transition: all 0.3s ease;
 }

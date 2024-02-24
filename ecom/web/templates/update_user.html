@@ -34,7 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'login'%}#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}#login">login</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}#signup">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">registre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">home</a></li>
                 </ul>
             </div>
         </div>
@@ -52,9 +52,9 @@
             </div>
             <div class="div-login_regist" id="regis">
                 <div class="login_regist" id="log">
-                    <h1 style="font-weight: bold;">Create</h1>
-                    <h1 style="font-weight: bold;">New account<span class="highlight">.</span></h1>
-                    <form action="{%url 'register' %}" method="post">
+                    <h1 style="font-weight: bold;">Update</h1>
+                    <h1 style="font-weight: bold;">Your account<span class="highlight">.</span></h1>
+                    <form action="{%url 'update_user' %}" method="post">
                         {% csrf_token %}
                         <div class="put-con">
                             <input type="text" name="name" class="put-to" placeholder="name">
@@ -71,10 +71,8 @@
                             <input type="password" name="password1" class="put-to" placeholder="Password">
                             <input type="password" name="password2" class="put-to" placeholder="Password">
                         </div>
-                        <p style="margin-left: 20px;">you alrady have a accont <a
-                                href="{% url 'login' %}#login">login</a>.</p>
                         <button type="submit" id="brnn">
-                            <h3 style="font-weight: bold;">Sing up</h3>
+                            <h3 style="font-weight: bold;">update</h3>
                         </button>
                     </form>
                 </div>
