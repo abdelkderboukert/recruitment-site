@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'web',
     'verify_email',
     'webpack_loader',
+    'watchman',
 ]
 
 MIDDLEWARE = [

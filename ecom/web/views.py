@@ -14,6 +14,7 @@ import random
 import string
 from validate_email import validate_email
 
+
 def login_user(request):
     if request.user.is_authenticated:
         return redirect('home')
