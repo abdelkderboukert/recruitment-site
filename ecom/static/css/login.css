@@ -11323,3 +11323,16 @@ form{
 .highlight {
   color: #64a19d;
 }
+
+#tit{
+  animation: title-opacity 0.5s !important;
+}
+
+@keyframes title-opacity{
+  0%{opacity:0;
+     transform: scale(0.7);
+    }
+  100%{opacity:1;
+       transform: scale(1);
+      }
+}

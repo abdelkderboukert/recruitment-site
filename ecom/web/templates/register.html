@@ -58,14 +58,20 @@
                         {% csrf_token %}
                         <div class="put-con">
                             <input type="text" name="name" class="put-to" placeholder="name">
-                            <input type="text" name="prename" class="put-to" placeholder="prename">
+                            <!--<input type="text" name="prename" class="put-to" placeholder="prename">-->
+                            {{ form.last_name }}
+                            {{ form.last_name.errors }}
                         </div>
                         <div class="put-con">
                             <input type="email" name="email" class="put-on" placeholder="email">
                         </div>
                         <div class="put-con">
-                            <input type="text" name="phone" class="put-to" placeholder="N°phon">
-                            <input type="text" name="address" class="put-to" placeholder="address">
+                            <!--<input type="text" name="phone" class="put-to" placeholder="N°phon">-->
+                            {{ form.phone }}
+                            {{ form.phone.errors }}
+                            <!--<input type="text" name="address" class="put-to" placeholder="address">-->
+                            {{ form.address }}
+                            {{ form.address.errors }}
                         </div>
                         <div class="put-con">
                             <input type="password" name="password1" class="put-to" placeholder="Password">

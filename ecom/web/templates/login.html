@@ -43,9 +43,10 @@
         <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
             <div class="d-flex justify-content-center">
                 <div class="text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">ALG ON</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by
-                        Start Bootstrap.</h2>
+                    <h1 class="mx-auto my-0 text-uppercase" id="tit">ALG ON</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">The site will offer a user-friendly interface where
+                        candidates will be able to download
+                        their cv.</h2>
                     <a class="btn btn-primary" href="{% url 'register' %}">Get Started</a>
                 </div>
             </div>
@@ -105,13 +106,6 @@
                 <div class="col-md-10 col-lg-8 mx-auto text-center">
                     <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
                     <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
                     <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
                         <!-- Email address input-->
                         <div class="row input-group-newsletter">
@@ -125,10 +119,6 @@
                             required.</div>
                         <div class="invalid-feedback mt-2" data-sb-feedback="emailAddress:email">Email is not valid.
                         </div>
-                        <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
                         <div class="d-none" id="submitSuccessMessage">
                             <div class="text-center mb-3 mt-2 text-white">
                                 <div class="fw-bolder">Form submission successful!</div>
@@ -138,10 +128,6 @@
                                     href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                             </div>
                         </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
                         <div class="d-none" id="submitErrorMessage">
                             <div class="text-center text-danger mb-3 mt-2">Error sending message!</div>
                         </div>

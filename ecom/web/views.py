@@ -28,7 +28,7 @@ def login_user(request):
             return redirect('home')
         else:
             messages.success(request, 'please try again')
-            return redirect('home')
+            return redirect('login')
     else:
         return render(request, 'login.html', {})
 
@@ -54,21 +54,18 @@ def register(request):
            username = f"{full_name}_{unique_id}"
            v = validate_email(email, verify=True)
            if v:
-              input("1")
               if User.objects.filter(email=email).exists():
-                  return render(request, 'register.html', {'error': 'Email address already in use.'})
-        
-              user = User.objects.create_user(username=username, email=email, password=password1)
-              user.save()
-
-              if form.is_valid():
-                  instance = form.save(commit=False)
-                  instance.save(commit=True)
+                  return render(request, 'register.html', {'error': 'Email address already in use.'}, {'form': form})
+              else:
+                  user = User.objects.create_user(username=username, email=email, password=password1)
+                  user.save()
+                  if form.is_valid():
+                     instance = form.save(commit=False)
+                     instance.save(commit=True)
 
               login(request, user)
               return redirect('home')
            else:
-               input("2")
                form = infoForm()
                return render(request, 'register.html', {'error': 'Email address does not exist.'}, {'form': form})
     else:
@@ -112,3 +109,12 @@ def update_user(request):
 def create_cv(request):
     form = infoForm
     return render(request, 'create_cv.html', {'form': form})
+
+
+def del_user():
+    try:
+        User.objects.exclude(id=1).delete()
+    except User.DoesNotExist:
+        pass
+
+    return redirect('login')
