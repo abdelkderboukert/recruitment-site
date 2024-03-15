@@ -27,9 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web',
-    'verify_email',
-    'webpack_loader',
-    'watchman',
 ]
 
 MIDDLEWARE = [

@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 class user(models.Model):
     first_name = models.CharField(max_length=20, unique=False)
@@ -12,13 +13,14 @@ class user(models.Model):
     
 
 class info(models.Model):
-    use = models.ForeignKey(user, on_delete=models.CASCADE)
+    #use = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     last_name = models.CharField(max_length=20)
-    age = models.CharField(max_length=2)
+    #age = models.CharField(max_length=2)
     address = models.CharField(max_length=50)
     phone = models.CharField(max_length=20)
-    image = models.ImageField(upload_to='uploads/info/')
-    date = models.DateField(default=timezone.now)
+    #image = models.ImageField(upload_to='uploads/info/')
+    #date = models.DateField(default=timezone.now)
 
     def __str__(self):
         return self.last_name
