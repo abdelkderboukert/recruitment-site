@@ -172,6 +172,9 @@
   color: #fff;
 }
 
+.card-button {
+  color: white;
+}
 
 .slider-content .slide .card-sections, .slider-content .slide .card-button{
   opacity: 0;
