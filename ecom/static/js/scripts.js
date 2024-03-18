@@ -50,17 +50,17 @@ if (navigator.userAgent.indexOf("Chrome") > -1 || navigator.userAgent.indexOf("S
     style.type = 'text/css';
     style.innerHTML = 'body::-webkit-scrollbar { display: none; }';
     document.getElementsByTagName('head')[0].appendChild(style);
-  } else if (navigator.userAgent.indexOf("MSIE") > -1 || navigator.userAgent.indexOf("Trident") > -1) {
+} else if (navigator.userAgent.indexOf("MSIE") > -1 || navigator.userAgent.indexOf("Trident") > -1) {
     var style = document.createElement('style');
     style.type = 'text/css';
     style.innerHTML = 'body { -ms-overflow-style: none; }';
     document.getElementsByTagName('head')[0].appendChild(style);
-  }
+}
 
-  document.getElementById('btn-email').addEventListener('input', function() {
+document.getElementById('btn-email').addEventListener('input', function () {
     this.style.borderColor = '#64a19d';
-  });
+});
 
-  document.getElementById('btn-password').addEventListener('input', function() {
+document.getElementById('btn-password').addEventListener('input', function () {
     this.style.borderColor = '#64a19d';
-  });
+});

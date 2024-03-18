@@ -62,7 +62,7 @@ def register(request):
               if User.objects.filter(email=email).exists():
                   return render(request, 'register.html', {'error': 'Email address already in use.'}, {'form': form})
               else:
-                  user = User.objects.create_user(username=username, email=email, password=password1)
+                  user = User.objects.create_user(username=username, email=email, password=password1, first_name=name, last_name=form.cleaned_data['last_name'])
                   user.save()
                   if user and form.is_valid():
                     new_info = info(user=user, last_name=form.cleaned_data['last_name'], address=form.cleaned_data['address'], phone=form.cleaned_data['phone'])
@@ -81,9 +81,8 @@ def register(request):
 def home(request):
     @user_passes_test(lambda u: u.is_authenticated, login_url='login')
     def view(request):
-      users = user.objects.all()
-      hmhm = 'gdgfngh'
-      return render(request, 'home.html', { 'users' : users , 'hmhm' : hmhm})
+      users = [1,2,3,4,5]
+      return render(request, 'home.html', { 'users' : users })
     return view(request)
 
 @login_required
@@ -104,31 +103,40 @@ def update_user(request):
             full_name = name + " " + prename
             current_user.username = full_name
             current_user.email = email
+            current_user.first_name = name
+            current_user.last_name = prename
             if password1 and password1 == password2:
                 current_user.set_password(password1)
                 update_session_auth_hash(request, current_user)
                 current_user.save()
-                #Uinfo = info.objects.get(user=current_user)
                 try:
                    Uinfo = info.objects.get(user=current_user)
                    Uinfo.last_name = prename
                    Uinfo.address = address
                    Uinfo.phone=phone
                    Uinfo.save()
-                   print("uinfo exists")
                 except info.DoesNotExist:
+                   print("5")
                    new_info = info(user=current_user, last_name=prename, address=address, phone=phone)
                    new_info.save()
-                   print("uinfo does not exist")
                 
                 return redirect('home')
     else:
-        return render(request, 'update_user.html', {})
+        print("6")
+        current_user = request.user
+        Uinfo = info.objects.get(user=current_user)
+        context = {'user': current_user,
+                   'name': current_user.last_name,
+                   'prename': Uinfo.last_name,
+                   'email': current_user.email,
+                   'address': Uinfo.address if current_user else '',
+                   'phone': Uinfo.phone if current_user.info else ''}
+        return render(request, 'update_user.html', context)
     
 @login_required
 def create_cv(request):
-    form = infoForm
-    return render(request, 'create_cv.html', {'form': form})
+    users = [1,2,3,4,5]
+    return render(request, 'create_cv.html', {'users':users})
 
 def del_user(request):
     try:
