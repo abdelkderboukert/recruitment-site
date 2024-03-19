@@ -22715,6 +22715,8 @@ label {
   margin-inline: auto;
   opacity: 0;
   transition: opacity 1s 1s;
+  color: #000;
+  overflow-x: auto;
 }
 
 .card__description {

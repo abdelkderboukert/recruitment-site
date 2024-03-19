@@ -21,6 +21,8 @@ class job(models.Model):
     name = models.CharField(max_length=50, unique=True)
     details = models.TextField()
     salary = models.IntegerField()
+    hour = models.IntegerField(default=8)
+    place = models.CharField(max_length=100)
     image = models.ImageField(upload_to='uploads/info/')
     condition = models.OneToOneField(condition, on_delete=models.CASCADE)
     user = models.ManyToManyField('info')
