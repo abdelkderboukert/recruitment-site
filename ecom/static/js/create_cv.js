@@ -243,7 +243,17 @@ swiper.run();
 //   rightScroll();
 // });
 
-
+if (navigator.userAgent.indexOf("Chrome") > -1 || navigator.userAgent.indexOf("Safari") > -1) {
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = 'body::-webkit-scrollbar { display: none; }';
+    document.getElementsByTagName('head')[0].appendChild(style);
+} else if (navigator.userAgent.indexOf("MSIE") > -1 || navigator.userAgent.indexOf("Trident") > -1) {
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = 'body { -ms-overflow-style: none; }';
+    document.getElementsByTagName('head')[0].appendChild(style);
+}
 
 /*window.addEventListener('DOMContentLoaded', event => {
 

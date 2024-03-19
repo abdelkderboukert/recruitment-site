@@ -141,7 +141,11 @@ def update_user(request):
 @login_required
 def create_cv(request):
     users = [1,2,3,4,5]
-    return render(request, 'create_cv.html', {'users':users})
+    jobs = job.objects.all()
+    current_user= request.user
+    Uinfo = info.objects.get(user=current_user)
+    Ujobs = Uinfo.jobs.all()
+    return render(request, 'create_cv.html', { 'jobs' : jobs , 'Ujobs' : Ujobs})
 
 @login_required
 def add(request, jobID):

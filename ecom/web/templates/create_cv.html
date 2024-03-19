@@ -20,6 +20,39 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">ALGERIA ON</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %} #about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %} #projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %} #signup">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'update_user' %}">update profile</a></li>
+                    <li class="nav-item"><a class="nav-link" id="logo" href="{% url 'logout' %}">logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">ALG ON</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">The site will offer a user-friendly interface where
+                        candidates will be able to download
+                        their cv.</h2>
+                </div>
+            </div>
+        </div>
+    </header>
     <section id="contt_sec">
         <br>
         <br>
@@ -36,29 +69,101 @@
             <div class="slider-container">
                 <div class="left-arrow"><i class="fa fa-angle-left" style="font-size:24px"></i></div>
                 <div class="slider-content" id='slider-content'>
-                    {% for user in users%}
+                    {% for job in jobs %}
+                    {% if job in Ujobs %}
                     <div class='slide'>
-                        <div class="media">
+                        <div class="mediaa">
                             <img src="https://e1.pxfuel.com/desktop-wallpaper/604/743/desktop-wallpaper-best-cards-to-pull-from-pokemon-tcg-fusion-strike-vmax-gengar.jpg"
                                 alt="">
                             <video src=""></video>
                             <div class="card__data">
                                 <span class="card__description">Vancouver Mountains, Canada</span>
                                 <h2 class="card__title">The Great Path</h2>
+                                <br>
+                                <h2 class="card__title">{{ job.details }}</h2><br>
+                                <h2 class="card__title">{{ job.salary }}</h2><br>
+                                <h2 class="card__title">{{ job.condition.age }}</h2><br>
+                                <a href="#" class="card__button">Read More</a>
+                            </div>
+                        </div>
+                        <style>
+                            .mediaa,
+                            .card-sections {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 25px;
+                                overflow: hidden;
+                            }
+
+                            .mediaa {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+
+                            .mediaa img {
+                                position: absolute;
+                                height: 30rem;
+                                filter: grayscale(100%);
+                            }
+                        </style>
+                        <div class="card-sections">
+                            <div class="lower-section">
+                                <div class="card-caption">
+                                    <h2>{{ job.name }}</h2>
+                                    send seccsfuly
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class='slide'>
+                        <div class="media">
+                            <img src="https://e1.pxfuel.com/desktop-wallpaper/604/743/desktop-wallpaper-best-cards-to-pull-from-pokemon-tcg-fusion-strike-vmax-gengar.jpg"
+                                alt="">
+                            <!-- <video src=""></video> -->
+                            <div class="card__data">
+                                <span class="card__description">Vancouver Mountains, Canada</span>
+                                <h2 class="card__title">The Great Path</h2>
+                                <br>
+                                <span class="card__description">{{ job.details }}</span><br>
+                                <span class="card__description">{{ job.salary }}</span><br>
+                                <span class="card__description">{{ job.condition.age }}</span><br>
                                 <a href="#" class="card__button">Read More</a>
                             </div>
                         </div>
                         <div class="card-sections">
                             <div class="lower-section">
                                 <div class="card-caption">
-                                    <h2>website developer</h2>
+                                    <h2><!--website developer -->{{ job.name }}</h2>
                                 </div>
-                                <div class="card-button">
-                                    know more
-                                </div>
+                                <button type="button" class="card-button" onclick="addJob('{{ job.id }}')">send
+                                    cv</button>
+                                <script>
+                                    function addJob(job) {
+                                        $.ajax({
+                                            url: '/add/' + job,
+                                            type: 'GET',
+                                            success: function (response) {
+                                                if (response.status == 'success') {
+                                                    alert('Job added successfully!');
+                                                } else {
+                                                    alert('Error adding job.');
+                                                }
+                                            },
+                                            error: function () {
+                                                alert('Error adding job.');
+                                            }
+                                        });
+                                    }
+                                </script>
                             </div>
                         </div>
                     </div>
+                    {% endif%}
                     {% endfor %}
                     <div class="slider-content-background"></div>
                 </div>
