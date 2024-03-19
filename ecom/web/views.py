@@ -86,20 +86,7 @@ def home(request):
       current_user= request.user
       Uinfo = info.objects.get(user=current_user)
       Ujobs = Uinfo.jobs.all()
-      i=0
-      n=0
-      for k in jobs:
-          if k in Ujobs:
-              print(k.name)
-              i=i+1
-              
-          n=i+1
-          
-      for k in jobs:
-          print(k.name)
-        
-      print(i)
-      print(n)
+
       return render(request, 'home.html', { 'jobs' : jobs , 'Ujobs' : Ujobs})
     return view(request)
 
