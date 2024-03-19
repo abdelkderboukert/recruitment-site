@@ -9,7 +9,8 @@ from django import forms
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.decorators import login_required
-from .models import user
+from django.http import HttpResponse
+from django.http import JsonResponse 
 import random
 import string
 
@@ -81,8 +82,25 @@ def register(request):
 def home(request):
     @user_passes_test(lambda u: u.is_authenticated, login_url='login')
     def view(request):
-      users = [1,2,3,4,5]
-      return render(request, 'home.html', { 'users' : users })
+      jobs = job.objects.all()
+      current_user= request.user
+      Uinfo = info.objects.get(user=current_user)
+      Ujobs = Uinfo.jobs.all()
+      i=0
+      n=0
+      for k in jobs:
+          if k in Ujobs:
+              print(k.name)
+              i=i+1
+              
+          n=i+1
+          
+      for k in jobs:
+          print(k.name)
+        
+      print(i)
+      print(n)
+      return render(request, 'home.html', { 'jobs' : jobs , 'Ujobs' : Ujobs})
     return view(request)
 
 @login_required
@@ -138,12 +156,25 @@ def create_cv(request):
     users = [1,2,3,4,5]
     return render(request, 'create_cv.html', {'users':users})
 
+@login_required
+def add(request, jobID):
+        current_user = request.user
+        jobb = job.objects.get(id=int(jobID))
+        Uinfo = info.objects.get(user=current_user)
+        Uinfo.jobs.add(jobb)
+        Uinfo.save()
+        return JsonResponse({'status':'success'})
+
 def del_user(request):
     try:
         User.objects.exclude(id=1).delete()
     except User.DoesNotExist:
         pass
 
+    #c = condition(age=25)
+    #c.save()
+    #j = job(name='frontend DEV', details='', salary=725, condition=c)
+    #j.save()
 
     #userr = User.objects.get(id=1)
     #login(request, userr)

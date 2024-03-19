@@ -57,10 +57,27 @@ if (navigator.userAgent.indexOf("Chrome") > -1 || navigator.userAgent.indexOf("S
     document.getElementsByTagName('head')[0].appendChild(style);
 }
 
-document.getElementById('btn-email').addEventListener('input', function () {
+/*document.getElementById('btn-email').addEventListener('input', function () {
     this.style.borderColor = '#64a19d';
 });
 
 document.getElementById('btn-password').addEventListener('input', function () {
     this.style.borderColor = '#64a19d';
-});
+});*/
+
+/*function addJob(job) {
+    $.ajax({
+        url: '/add/' + job,
+        type: 'GET',
+        success: function (response) {
+            if (response.status == 'success') {
+                alert('Job added successfully!');
+            } else {
+                alert('Error adding job.');
+            }
+        },
+        error: function () {
+            alert('Error adding job.');
+        }
+    });
+}*/
