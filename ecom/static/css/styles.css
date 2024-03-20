@@ -11330,8 +11330,8 @@ label {
 
 .slider-container {
   height: 35rem;
-  width: 50vw;
-  max-width: 1200px;
+  width: 100%;
+  min-width: 280px !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11352,6 +11352,7 @@ label {
 .slider-content {
   height: 100%;
   width: 80%;
+  min-width: 270px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11468,13 +11469,14 @@ label {
 }
 
 .slider-container i{
-  width: 2rem;
+  /*width: 2rem;*/
   height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   border-radius: 50%;
+  min-width: 380px !important;
 }
 .slider-container .left-arrow:hover i, .slider-container .right-arrow:hover i{
   background: rgba(22,22,220,0.1);
@@ -11576,16 +11578,20 @@ label {
   }
 }
 
-@media /*screen and */(max-width:620px){
+@media screen and (max-width:620px){
 .slide.position-1, .slide.position-5 {
   opacity: 0.5 !important;
   }
   .slide.position-2, .slide.position-4 {
   opacity: 0.95 !important;
+
+}
+.slider-content{
+  width: 320px;
 }
 } 
   
-@media /*screen and */(max-width:415px){/*445px*/
+@media screen and (max-width:415px){/*445px*/
   
   .slide.position-1, .slide.position-5 {
   opacity: 0 !important;
@@ -11735,7 +11741,7 @@ label {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 340px) {
+@media /*screen and */(max-width: 340px) {
   .container {
     margin-inline: 1rem;
   }
@@ -11747,7 +11753,7 @@ label {
 }
 
 /* For medium devices */
-@media screen and (min-width: 768px) {
+@media /*screen and */(min-width: 768px) {
   .card__container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
@@ -11755,7 +11761,7 @@ label {
 }
 
 /* For large devices */
-@media screen and (min-width: 1120px) {
+@media /*screen and */(min-width: 1120px) {
   .container {
     height: 100%;
   }
