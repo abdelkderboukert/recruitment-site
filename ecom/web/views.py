@@ -140,7 +140,6 @@ def update_user(request):
     
 @login_required
 def create_cv(request):
-    users = [1,2,3,4,5]
     jobs = job.objects.all()
     current_user= request.user
     Uinfo = info.objects.get(user=current_user)
